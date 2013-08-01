@@ -4,14 +4,14 @@
 - PHP
 - Linux/Unix Server
 
-## Description
+## description
 Simple javascript concatenator/packer
 Concatenates javascript files and inline javascript and writes it to one single file
 
-## Installation
+## installation
 Copy the spack folder to the document root of your website
 
-## Usage
+## usage
 
 Init spack at the beginning of your page
 
