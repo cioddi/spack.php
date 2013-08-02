@@ -16,7 +16,7 @@ class Spack{
 		$this->spack_path = $_SERVER['DOCUMENT_ROOT'].'/spack/';
 
 		$this->scriptFileExists = false;
-		if(file_exists($this->spack_path.'packed/'.md5($_SERVER['REQUEST_URI']).'.js'))$this->scriptFileExists = true;
+		if(file_exists($this->getTargetPathAbsolute()))$this->scriptFileExists = true;
 
 		
 
@@ -24,6 +24,19 @@ class Spack{
 
 
 		}
+	}
+
+	public function getTargetScriptName(){
+		return md5($_SERVER['REQUEST_URI']).'.js';
+	}
+
+
+	public function getTargetPathAbsolute(){
+		return $this->spack_path.'packed/'.$this->getTargetScriptName();
+	}
+
+	public function getTargetPathRelative(){
+		return '/spack/packed/'.$this->getTargetScriptName();
 	}
 
 	// add string filepath or array of string filepaths to javascript files
@@ -86,11 +99,11 @@ class Spack{
 	public function build(){
 		
 		if(!$this->scriptFileExists){
-			exec('cat '.implode(' ',$this->filesToPack).' > '.$this->spack_path.'packed/'.md5($_SERVER['REQUEST_URI']).'.js');
+			exec('cat '.implode(' ',$this->filesToPack).' > '.$this->getTargetPathAbsolute());
 			exec('rm '.$this->spack_path.'tmp/*');
 		}
 
-		echo '<script src="/spack/packed/'.md5($_SERVER['REQUEST_URI']).'.js"></script>';
+		echo '<script src="'.$this->getTargetPathRelative().'"></script>';
 	}
 
 
