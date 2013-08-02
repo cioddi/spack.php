@@ -2,8 +2,8 @@
 /**
 * class Spack
 * 
-* @description	Simple Javascript concatenator/packer
-* @aurhor				Max Tobias Weber (Maxtobiasweber@gmail.com)
+* @description  Simple Javascript concatenator/packer
+* @aurhor       Max Tobias Weber (Maxtobiasweber@gmail.com)
 * 
 */
 class Spack{
@@ -12,10 +12,13 @@ class Spack{
 	var $scriptFileExists;
 
 	function __construct($options = null){
-		$this->scriptFileExists = false;
-		if(file_exists('/spack/packed/'.md5($_SERVER['REQUEST_URI']).'.js'))$this->scriptFileExists = true;
 
 		$this->spack_path = $_SERVER['DOCUMENT_ROOT'].'/spack/';
+
+		$this->scriptFileExists = false;
+		if(file_exists($this->spack_path.'packed/'.md5($_SERVER['REQUEST_URI']).'.js'))$this->scriptFileExists = true;
+
+		
 
 		if($options){
 
