@@ -1,12 +1,18 @@
 sudo apt-get update > /dev/null
-sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl
+sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl lynx
 
-sudo sed -i -e "s,/var/www,/home/travis/build/cioddi/spack.php,g" /etc/apache2/sites-available/default
+cd ..
+mv spack.php spack
+cd spack
+
+sudo sed -i -e "s,/var/www,/home/travis/build/cioddi/spack,g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
+
 
 cat /etc/apache2/sites-available/default
 pwd
 ls -la
+lynx -dump "127.0.0.1/tests/testpage.php"
 
 serverUrl='http://127.0.0.1:4444'
 serverFile=selenium-server-standalone-2.35.0.jar
