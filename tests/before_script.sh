@@ -5,6 +5,8 @@ sudo sed -i -e "s,/var/www,$(pwd),g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
 
 tail /etc/apache2/sites-available/default
+pwd
+ls -la
 
 serverUrl='http://127.0.0.1:4444'
 serverFile=selenium-server-standalone-2.35.0.jar
