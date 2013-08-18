@@ -4,7 +4,7 @@ sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-i
 sudo sed -i -e "s,/var/www,/home/travis/build/cioddi/spack.php,g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
 
-tail /etc/apache2/sites-available/default
+cat /etc/apache2/sites-available/default
 pwd
 ls -la
 
