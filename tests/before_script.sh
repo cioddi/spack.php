@@ -4,8 +4,8 @@ sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-i
 cd ..
 mv spack.php spack
 cd spack
-chmod 777 /var/www,/home/travis/build/cioddi/spack/tmp
-chmod 777 /var/www,/home/travis/build/cioddi/spack/packed
+chmod 777 /home/travis/build/cioddi/spack/tmp
+chmod 777 /home/travis/build/cioddi/spack/packed
 
 sudo sed -i -e "s,/var/www,/home/travis/build/cioddi,g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
@@ -14,7 +14,8 @@ sudo /etc/init.d/apache2 restart
 cat /etc/apache2/sites-available/default
 pwd
 ls -la
-lynx -dump "127.0.0.1/tests/testpage.php"
+lynx -dump "127.0.0.1/spack/tests/testpage.php"
+ls packed
 
 serverUrl='http://127.0.0.1:4444'
 serverFile=selenium-server-standalone-2.35.0.jar
