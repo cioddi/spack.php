@@ -4,6 +4,8 @@ sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-i
 sudo sed -i -e "s,/var/www,$(pwd),g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
 
+tail /etc/apache2/sites-available/default
+
 serverUrl='http://127.0.0.1:4444'
 serverFile=selenium-server-standalone-2.35.0.jar
 firefoxUrl=http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/21.0/linux-x86_64/en-US/firefox-21.0.tar.bz2
