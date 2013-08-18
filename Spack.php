@@ -3,7 +3,7 @@
 * class Spack
 * 
 * @description  Simple Javascript concatenator/packer
-* @aurhor       Max Tobias Weber (Maxtobiasweber@gmail.com)
+* @author       Max Tobias Weber (Maxtobiasweber@gmail.com)
 * 
 */
 class Spack{
@@ -77,10 +77,7 @@ class Spack{
   	
 
 	  	$scriptContent = '
-
-	  	'.$scriptContent.'
-
-	  	';
+'.$scriptContent;
 	  	// save contents to temp file
 	  	$i = 1;
 	  	while(file_exists($this->tempFilename($i))){
