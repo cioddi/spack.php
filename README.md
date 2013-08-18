@@ -1,10 +1,10 @@
 # Spack
 
+[![Build Status](https://travis-ci.org/cioddi/spack.php.png)](https://travis-ci.org/cioddi/spack.php)
+
 ## description
 Simple javascript concatenator/packer
 Concatenates javascript files and inline javascript and writes it to one single file
-
-[![Build Status](https://travis-ci.org/cioddi/spack.php.png)](https://travis-ci.org/cioddi/spack.php)
 
 ## requirements 
 - PHP
