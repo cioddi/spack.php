@@ -1,12 +1,14 @@
 # Spack
 
-## requirements 
-- PHP
-- Linux/Unix Server
-
 ## description
 Simple javascript concatenator/packer
 Concatenates javascript files and inline javascript and writes it to one single file
+
+[![Build Status](https://travis-ci.org/cioddi/spack.php.png)](https://travis-ci.org/cioddi/spack.php)
+
+## requirements 
+- PHP
+- Linux/Unix Server
 
 ## installation
 Copy the spack folder to the document root of your website
