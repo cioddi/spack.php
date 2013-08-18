@@ -6,7 +6,7 @@ php:
   - 5.5
 
 before_script:
-  - ./before_script.sh
+  - ./tests/before_script.sh
 
 script: phpunit --verbose -c tests/phpunit.xml
 
