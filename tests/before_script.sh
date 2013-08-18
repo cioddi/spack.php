@@ -1,7 +1,7 @@
 sudo apt-get update > /dev/null
 sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl
 
-sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
+sudo sed -i -e "s,/var/www,$(pwd),g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
 
 serverUrl='http://127.0.0.1:4444'
