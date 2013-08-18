@@ -4,6 +4,8 @@ sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-i
 cd ..
 mv spack.php spack
 cd spack
+chmod 777 /var/www,/home/travis/build/cioddi/spack/tmp
+chmod 777 /var/www,/home/travis/build/cioddi/spack/packed
 
 sudo sed -i -e "s,/var/www,/home/travis/build/cioddi,g" /etc/apache2/sites-available/default
 sudo /etc/init.d/apache2 restart
